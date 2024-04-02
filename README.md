@@ -4,4 +4,5 @@
 
 # Funcionalidades
 
-- Cadastrrarr Livros
+- Cadastrar Livros
+- Cadastrar Usuarios
