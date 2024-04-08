@@ -11,44 +11,41 @@ public class gerenciadorUsuarios {
     }
 
     public void adicionarUsuario(usuario usuario) {
-        try {
-            usuario.set_id_usuario(usuarios.size() + 1);
-        } catch (Exception e) {
-            usuario.set_id_usuario(1);
-        }
+        usuario.set_id_usuario(usuarios.size() + 1);
         usuarios.put(usuario.get_id_usuario(), usuario);
     }
 
     public usuario buscarUsuario(int idUsuario) {
-        try {
-            return usuarios.get(idUsuario);
-        } catch (Exception e) {
+        usuario usuario = usuarios.get(idUsuario);
+        if (usuario == null) {
             System.out.println("Usuário não encontrado.");
         }
-        return null;
+        return usuario;
     }
 
     public void listarUsuarios() {
-        try {
-            System.out.println("Lista de Usuários:");
-            for (usuario usuario : usuarios.values()) {
-                System.out.println("ID: " + usuario.get_id_usuario() + ", Nome: " + usuario.get_nome());
-            }
-        } catch (Exception e) {
+        if (usuarios.isEmpty()) {
             System.out.println("Não há usuários cadastrados.");
+            return;
+        }
+        System.out.println("Lista de Usuários:");
+        for (usuario usuario : usuarios.values()) {
+            System.out.println("ID: " + usuario.get_id_usuario() + ", Nome: " + usuario.get_nome());
         }
     }
 
     public void excluirUsuario(int idUsuario) {
-        try {
-            for (usuario usuario : usuarios.values()) {
-                if (usuario.get_id_usuario() > idUsuario) {
-                    usuario.set_id_usuario(usuario.get_id_usuario() - 1);
-                    usuarios.remove(idUsuario);
-                }
-            }
-        } catch (Exception e) {
+        usuario usuario = usuarios.remove(idUsuario);
+        if (usuario == null) {
             System.out.println("Usuário não encontrado.");
+            return;
+        }
+
+        // Atualizar IDs dos usuários restantes
+        for (usuario u : usuarios.values()) {
+            if (u.get_id_usuario() > idUsuario) {
+                u.set_id_usuario(u.get_id_usuario() - 1);
+            }
         }
     }
 }
