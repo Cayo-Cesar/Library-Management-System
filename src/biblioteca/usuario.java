@@ -3,6 +3,7 @@
 package biblioteca;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class usuario {
 
@@ -11,7 +12,11 @@ public class usuario {
     private int idade;
     private String endereco;
     private String telefone;
-    private ArrayList<String> LivrosEmprestados = new ArrayList<String>();
+    private List<livro> livrosEmprestados;
+
+    public usuario() {
+        this.livrosEmprestados = new ArrayList<>();
+    }
 
     public int get_id_usuario() {
         return id_usuario;
@@ -53,15 +58,11 @@ public class usuario {
         this.telefone = telefone;
     }
 
-    public ArrayList<String> get_LivrosEmprestados() {
-        return LivrosEmprestados;
+    public void adicionarLivroEmprestado(livro livro) {
+        livrosEmprestados.add(livro);
     }
 
-    public void set_LivrosEmprestados(ArrayList<String> LivrosEmprestados) {
-        this.LivrosEmprestados = LivrosEmprestados;
-    }
-
-    public void emprestarLivro(String livro) {
-        LivrosEmprestados.add(livro);
+    public void removerLivroEmprestado(livro livro) {
+        livrosEmprestados.remove(livro);
     }
 }

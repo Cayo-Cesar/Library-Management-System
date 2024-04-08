@@ -53,4 +53,16 @@ public class gerenciadorUsuarios {
             }
         }
     }
+
+    public void emprestarLivro(usuario usuario, livro livro) {
+        if (usuario != null && livro != null) {
+            usuario.adicionarLivroEmprestado(livro);
+        }
+    }
+
+    public void devolverLivro(usuario usuario, livro livro) {
+        if (usuario != null && livro != null) {
+            usuario.removerLivroEmprestado(livro);
+        }
+    }
 }
