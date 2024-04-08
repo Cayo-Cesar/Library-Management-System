@@ -6,12 +6,12 @@ import java.util.ArrayList;
 
 public class usuario {
 
-    int id_usuario;
-    String nome;
-    int idade;
-    String endereco;
-    String telefone;
-    ArrayList<String> LivrosEmprestados = new ArrayList<String>();
+    private int id_usuario;
+    private String nome;
+    private int idade;
+    private String endereco;
+    private String telefone;
+    private ArrayList<String> LivrosEmprestados = new ArrayList<String>();
 
     public int get_id_usuario() {
         return id_usuario;

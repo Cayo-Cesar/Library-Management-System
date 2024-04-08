@@ -2,12 +2,12 @@ package biblioteca;
 
 public class livro {
 
-    int id_livro;
-    String titulo;
-    String autor;
-    int ano;
-    String genero;
-    boolean disponivel;
+    private int id_livro;
+    private String titulo;
+    private String autor;
+    private int ano;
+    private String genero;
+    private boolean disponivel;
 
     public int get_id_livro() {
         return id_livro;
