@@ -1,5 +1,8 @@
+
 // No changes needed, remove the import statement for java.lang.String
 package biblioteca;
+
+import java.util.ArrayList;
 
 public class usuario {
 
@@ -8,7 +11,7 @@ public class usuario {
     int idade;
     String endereco;
     String telefone;
-    String LivrosEmprestados[] = new String[5];
+    ArrayList<String> LivrosEmprestados = new ArrayList<String>();
 
     public int get_id_usuario() {
         return id_usuario;
@@ -50,16 +53,11 @@ public class usuario {
         this.telefone = telefone;
     }
 
-    public String[] get_LivrosEmprestados() {
+    public ArrayList<String> get_LivrosEmprestados() {
         return LivrosEmprestados;
     }
 
-    public void set_LivrosEmprestados(String[] LivrosEmprestados) {
+    public void set_LivrosEmprestados(ArrayList<String> LivrosEmprestados) {
         this.LivrosEmprestados = LivrosEmprestados;
     }
-
-
-
-
-    
 }
