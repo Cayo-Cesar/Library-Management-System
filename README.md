@@ -6,3 +6,6 @@
 
 - Cadastrar Livros
 - Cadastrar Usuarios
+- Fazer Emprestimos
+- Fazer Devoluções
+
