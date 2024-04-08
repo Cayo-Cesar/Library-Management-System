@@ -57,49 +57,39 @@ public class testeGerenciador {
 
 
 
+         // Teste de empréstimo e devolução de livros
 
-
-         // Criando um gerenciador de usuários
          gerenciadorUsuarios gerenciadorUsuarios = new gerenciadorUsuarios();
 
-         // Criando um gerenciador de livros
          gerenciadorLivros gerenciadorLivros = new gerenciadorLivros();
  
-         // Criando um usuário
          usuario usuario = new usuario();
          usuario.set_nome("João");
          usuario.set_idade(20);
          usuario.set_endereco("Rua A, 123");
          usuario.set_telefone("1234-5678");
  
-         // Criando um livro
          livro livro = new livro();
          livro.set_titulo("O Senhor dos Anéis");
          livro.set_autor("J.R.R. Tolkien");
          livro.set_ano(1954);
          livro.set_genero("Fantasia");
  
-         // Adicionando usuário e livro aos respectivos gerenciadores
          gerenciadorUsuarios.adicionarUsuario(usuario);
          gerenciadorLivros.adicionarLivro(livro);
  
-         // Exibindo informações iniciais
          System.out.println("Antes do empréstimo:");
          gerenciadorUsuarios.listarUsuarios();
          gerenciadorLivros.listarLivros();
  
-         // Emprestando o livro para o usuário
          gerenciadorUsuarios.emprestarLivro(usuario, livro);
  
-         // Exibindo informações após o empréstimo
          System.out.println("\nDepois do empréstimo:");
          gerenciadorUsuarios.listarUsuarios();
          gerenciadorLivros.listarLivros();
  
-         // Devolvendo o livro
          gerenciadorUsuarios.devolverLivro(usuario, livro);
- 
-         // Exibindo informações após a devolução
+
          System.out.println("\nDepois da devolução:");
          gerenciadorUsuarios.listarUsuarios();
          gerenciadorLivros.listarLivros();
