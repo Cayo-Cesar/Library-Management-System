@@ -13,6 +13,11 @@ public class gerenciadorUsuarios {
     public void adicionarUsuario(usuario usuario) {
         usuario.set_id_usuario(usuarios.size() + 1);
         usuarios.put(usuario.get_id_usuario(), usuario);
+        if (usuario.get_id_usuario() == usuarios.size()) {
+            System.out.println("Usuário cadastrado com sucesso.");
+        } else {
+            System.out.println("Usuário cadastrado com sucesso.");
+        }
     }
 
     public usuario buscarUsuario(int idUsuario) {
