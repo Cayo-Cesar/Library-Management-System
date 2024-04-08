@@ -60,4 +60,8 @@ public class usuario {
     public void set_LivrosEmprestados(ArrayList<String> LivrosEmprestados) {
         this.LivrosEmprestados = LivrosEmprestados;
     }
+
+    public void emprestarLivro(String livro) {
+        LivrosEmprestados.add(livro);
+    }
 }
