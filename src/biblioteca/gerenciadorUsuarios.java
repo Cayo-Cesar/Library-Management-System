@@ -35,7 +35,13 @@ public class gerenciadorUsuarios {
         }
         System.out.println("Lista de Usuários:");
         for (usuario usuario : usuarios.values()) {
-            System.out.println("ID: " + usuario.get_id_usuario() + ", Nome: " + usuario.get_nome());
+            StringBuilder livrosEmprestados = new StringBuilder();
+            for (livro livro : usuario.get_LivrosEmprestados()) {
+                livrosEmprestados.append(livro.get_titulo()).append(", ");
+            }
+            // Removendo a vírgula e o espaço extra no final da lista
+            String livrosEmprestadosString = livrosEmprestados.length() > 0 ? livrosEmprestados.substring(0, livrosEmprestados.length() - 2) : "";
+            System.out.println("ID: " + usuario.get_id_usuario() + ", Nome: " + usuario.get_nome() + ", Idade: " + usuario.get_idade() + ", Endereço: " + usuario.get_endereco() + ", Telefone: " + usuario.get_telefone() + ", Livros Emprestados: " + livrosEmprestadosString);
         }
     }
 

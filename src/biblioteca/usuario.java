@@ -58,6 +58,14 @@ public class usuario {
         this.telefone = telefone;
     }
 
+    public List<livro> get_LivrosEmprestados() {
+        return livrosEmprestados;
+    }
+
+    public void set_LivrosEmprestados(List<livro> livrosEmprestados) {
+        this.livrosEmprestados = livrosEmprestados;
+    }
+
     public void adicionarLivroEmprestado(livro livro) {
         livrosEmprestados.add(livro);
     }

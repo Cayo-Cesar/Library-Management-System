@@ -31,28 +31,77 @@ public class testeGerenciador {
         // gerenciador.excluirUsuario(1);
         // gerenciador.listarUsuarios();
 
-        livro livro1 = new livro();
-        livro1.set_id_livro(1);
-        livro1.set_titulo("Dom Casmurro");
-        livro1.set_autor("Machado de Assis");
-        livro1.set_ano(1899);
+        // livro livro1 = new livro();
+        // livro1.set_id_livro(1);
+        // livro1.set_titulo("Dom Casmurro");
+        // livro1.set_autor("Machado de Assis");
+        // livro1.set_ano(1899);
         
-        livro livro2 = new livro();
-        livro2.set_id_livro(2);
-        livro2.set_titulo("O Cortiço");
-        livro2.set_autor("Aluísio Azevedo");
-        livro2.set_ano(1890);
+        // livro livro2 = new livro();
+        // livro2.set_id_livro(2);
+        // livro2.set_titulo("O Cortiço");
+        // livro2.set_autor("Aluísio Azevedo");
+        // livro2.set_ano(1890);
 
-        gerenciadorLivros gerenciadorLivros = new gerenciadorLivros();
-        gerenciadorLivros.adicionarLivro(livro1);
-        gerenciadorLivros.adicionarLivro(livro2);
+        // gerenciadorLivros gerenciadorLivros = new gerenciadorLivros();
+        // gerenciadorLivros.adicionarLivro(livro1);
+        // gerenciadorLivros.adicionarLivro(livro2);
 
-        gerenciadorLivros.listarLivros();
+        // gerenciadorLivros.listarLivros();
 
-        livro livroBuscado = gerenciadorLivros.buscarLivro(1);
-        System.out.println("Livro buscado: " + livroBuscado.get_titulo());
+        // livro livroBuscado = gerenciadorLivros.buscarLivro(1);
+        // System.out.println("Livro buscado: " + livroBuscado.get_titulo());
 
-        gerenciadorLivros.excluirLivro(1);
-        gerenciadorLivros.listarLivros();
+        // gerenciadorLivros.excluirLivro(1);
+        // gerenciadorLivros.listarLivros();
+
+
+
+
+
+         // Criando um gerenciador de usuários
+         gerenciadorUsuarios gerenciadorUsuarios = new gerenciadorUsuarios();
+
+         // Criando um gerenciador de livros
+         gerenciadorLivros gerenciadorLivros = new gerenciadorLivros();
+ 
+         // Criando um usuário
+         usuario usuario = new usuario();
+         usuario.set_nome("João");
+         usuario.set_idade(20);
+         usuario.set_endereco("Rua A, 123");
+         usuario.set_telefone("1234-5678");
+ 
+         // Criando um livro
+         livro livro = new livro();
+         livro.set_titulo("O Senhor dos Anéis");
+         livro.set_autor("J.R.R. Tolkien");
+         livro.set_ano(1954);
+         livro.set_genero("Fantasia");
+ 
+         // Adicionando usuário e livro aos respectivos gerenciadores
+         gerenciadorUsuarios.adicionarUsuario(usuario);
+         gerenciadorLivros.adicionarLivro(livro);
+ 
+         // Exibindo informações iniciais
+         System.out.println("Antes do empréstimo:");
+         gerenciadorUsuarios.listarUsuarios();
+         gerenciadorLivros.listarLivros();
+ 
+         // Emprestando o livro para o usuário
+         gerenciadorUsuarios.emprestarLivro(usuario, livro);
+ 
+         // Exibindo informações após o empréstimo
+         System.out.println("\nDepois do empréstimo:");
+         gerenciadorUsuarios.listarUsuarios();
+         gerenciadorLivros.listarLivros();
+ 
+         // Devolvendo o livro
+         gerenciadorUsuarios.devolverLivro(usuario, livro);
+ 
+         // Exibindo informações após a devolução
+         System.out.println("\nDepois da devolução:");
+         gerenciadorUsuarios.listarUsuarios();
+         gerenciadorLivros.listarLivros();
     }
 }
