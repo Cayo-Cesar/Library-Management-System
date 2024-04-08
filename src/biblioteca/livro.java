@@ -2,19 +2,19 @@ package biblioteca;
 
 public class livro {
 
-    int id;
+    int id_livro;
     String titulo;
     String autor;
     int ano;
     String genero;
     boolean disponivel;
 
-    public int get_id() {
-        return id;
+    public int get_id_livro() {
+        return id_livro;
     }
 
-    public void set_id(int id) {
-        this.id = id;
+    public void set_id(int id_livro) {
+        this.id_livro = id_livro;
     }
 
     public String get_titulo() {
