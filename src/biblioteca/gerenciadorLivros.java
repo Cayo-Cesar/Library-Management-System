@@ -14,6 +14,11 @@ public class gerenciadorLivros {
         int novoId = livros.size() + 1;
         livro.set_id_livro(novoId);
         livros.put(novoId, livro);
+        if (livros.containsKey(novoId)) {
+            System.out.println("Livro cadastrado com sucesso.");
+        } else {
+            System.out.println("Erro ao cadastrar livro.");
+        }
     }
 
     public livro buscarLivro(int idLivro) {
