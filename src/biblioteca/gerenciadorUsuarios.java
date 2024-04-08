@@ -24,4 +24,8 @@ public class gerenciadorUsuarios {
             System.out.println("ID: " + usuario.get_id_usuario() + ", Nome: " + usuario.get_nome());
         }
     }
+
+    public void excluirUsuario(int idUsuario) {
+        usuarios.remove(idUsuario);
+    }
 }

@@ -24,4 +24,8 @@ public class gerenciadorLivros {
             System.out.println("ID: " + livro.get_id_livro() + ", Título: " + livro.get_titulo());
         }
     }
+
+    public void excluirLivro(int idLivro) {
+        livros.remove(idLivro);
+    }
 }
