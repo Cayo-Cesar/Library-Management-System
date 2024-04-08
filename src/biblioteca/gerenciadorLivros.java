@@ -11,44 +11,38 @@ public class gerenciadorLivros {
     }
 
     public void adicionarLivro(livro livro) {
-        try {
-            livro.set_id(livros.size() + 1);
-            livros.put(livro.get_id_livro(), livro);
-        } catch (Exception e) {
-            livro.set_id(1);
-        }
+        int novoId = livros.size() + 1;
+        livro.set_id_livro(novoId);
+        livros.put(novoId, livro);
     }
 
     public livro buscarLivro(int idLivro) {
-        try {
-            return livros.get(idLivro);
-        } catch (Exception e) {
-            System.out.println("Livro não encontrado.");
-        }
-        return null;
+        return livros.get(idLivro);
     }
 
     public void listarLivros() {
-        try {
-            System.out.println("Lista de Livros:");
-            for (livro livro : livros.values()) {
-                System.out.println("ID: " + livro.get_id_livro() + ", Título: " + livro.get_titulo());
-            }
-        } catch (Exception e) {
+        if (livros.isEmpty()) {
             System.out.println("Não há livros cadastrados.");
+            return;
+        }
+        System.out.println("Lista de Livros:");
+        for (livro livro : livros.values()) {
+            System.out.println("ID: " + livro.get_id_livro() + ", Título: " + livro.get_titulo());
         }
     }
 
     public void excluirLivro(int idLivro) {
-        try {
-            for (livro livro : livros.values()) {
-                if (livro.get_id_livro() > idLivro) {
-                    livro.set_id(livro.get_id_livro() - 1);
-                    livros.remove(idLivro);
-                }
-            }
-        } catch (Exception e) {
+        if (!livros.containsKey(idLivro)) {
             System.out.println("Livro não encontrado.");
+            return;
+        }
+
+        livros.remove(idLivro);
+
+        // Atualizar IDs dos livros restantes
+        int novoId = 1;
+        for (livro livro : livros.values()) {
+            livro.set_id_livro(novoId++);
         }
     }
 }

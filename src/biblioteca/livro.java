@@ -13,7 +13,7 @@ public class livro {
         return id_livro;
     }
 
-    public void set_id(int id_livro) {
+    public void set_id_livro(int id_livro) {
         this.id_livro = id_livro;
     }
 
