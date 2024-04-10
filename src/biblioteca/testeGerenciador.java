@@ -119,20 +119,20 @@ public class testeGerenciador {
         //  gerenciadorLivros.listarLivros();
 
 
-         // Cria um novo usuário
-    usuario usuario = new usuario();
-    usuario.set_id_usuario(1);
-    usuario.set_nome("Teste");
+    //      // Cria um novo usuário
+    // usuario usuario = new usuario();
+    // usuario.set_id_usuario(1);
+    // usuario.set_nome("Teste");
 
-    // Cria um novo livro
-    livro livro = new livro();
-    livro.set_id_livro(1);
-    livro.set_titulo("Livro de Teste");
+    // // Cria um novo livro
+    // livro livro = new livro();
+    // livro.set_id_livro(1);
+    // livro.set_titulo("Livro de Teste");
 
-    // Empresta o livro ao usuário
-    usuario.adicionarLivroEmprestado(livro);
+    // // Empresta o livro ao usuário
+    // usuario.adicionarLivroEmprestado(livro);
 
-    // Imprime a data de empréstimo
-    System.out.println("Data de empréstimo: " + usuario.getDataEmprestimo(livro));
-    }
+    // // Imprime a data de empréstimo
+    // System.out.println("Data de empréstimo: " + usuario.getDataEmprestimo(livro));
+    // }
 }
