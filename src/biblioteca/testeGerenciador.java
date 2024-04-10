@@ -74,15 +74,39 @@ public class testeGerenciador {
          livro.set_autor("J.R.R. Tolkien");
          livro.set_ano(1954);
          livro.set_genero("Fantasia");
+
+         livro livro2 = new livro();
+         livro2.set_titulo("O Hobbit");
+            livro2.set_autor("J.R.R. Tolkien");
+            livro2.set_ano(1937);
+            livro2.set_genero("Fantasia");
+
+            livro livro3 = new livro();
+            livro3.set_titulo("A Sociedade do Anel");
+            livro3.set_autor("J.R.R. Tolkien");
+            livro3.set_ano(1954);
+            livro3.set_genero("Fantasia");
+
+            livro livro4 = new livro();
+            livro4.set_titulo("As Duas Torres");
+            livro4.set_autor("J.R.R. Tolkien");
+            livro4.set_ano(1954);
+            livro4.set_genero("Fantasia");
  
          gerenciadorUsuarios.adicionarUsuario(usuario);
          gerenciadorLivros.adicionarLivro(livro);
+            gerenciadorLivros.adicionarLivro(livro2);
+            gerenciadorLivros.adicionarLivro(livro3);
+            gerenciadorLivros.adicionarLivro(livro4);
  
          System.out.println("Antes do empréstimo:");
          gerenciadorUsuarios.listarUsuarios();
          gerenciadorLivros.listarLivros();
  
          gerenciadorUsuarios.emprestarLivro(usuario, livro);
+            gerenciadorUsuarios.emprestarLivro(usuario, livro2);
+            gerenciadorUsuarios.emprestarLivro(usuario, livro3);
+            gerenciadorUsuarios.emprestarLivro(usuario, livro4);
  
          System.out.println("\nDepois do empréstimo:");
          gerenciadorUsuarios.listarUsuarios();

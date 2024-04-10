@@ -62,6 +62,10 @@ public class gerenciadorUsuarios {
 
     public void emprestarLivro(usuario usuario, livro livro) {
         if (usuario != null && livro != null) {
+            if(usuario.get_LivrosEmprestados().size() >= 3) {
+                System.out.println("Usuário já possui 3 livros emprestados.");
+                return;
+            }
             usuario.adicionarLivroEmprestado(livro);
         }
     }
