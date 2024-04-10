@@ -85,8 +85,18 @@ public class gerenciadorUsuarios {
                 System.out.println("O livro foi emprestado por " + daysBorrowed + " dias.");
                 multa = daysBorrowed * 0.5;
                 System.out.println("Multa a ser paga: R$" + multa);
+                while (true) {
+                    System.out.println("Deseja pagar a multa? (S/N)");
+                    String resposta = System.console().readLine();
+                    if (resposta.equalsIgnoreCase("S")) {
+                        break;
+                    } else if (resposta.equalsIgnoreCase("N")) {
+                        return;
+                    }
+                }
             }
             usuario.removerLivroEmprestado(livro);
+            System.out.println("Livro devolvido com sucesso.");
         }
     }
 }
