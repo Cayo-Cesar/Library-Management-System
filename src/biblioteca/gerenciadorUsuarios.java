@@ -2,6 +2,8 @@ package biblioteca;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 public class gerenciadorUsuarios {
     private Map<Integer, usuario> usuarios;
@@ -71,7 +73,19 @@ public class gerenciadorUsuarios {
     }
 
     public void devolverLivro(usuario usuario, livro livro) {
+        double multa = 0;
         if (usuario != null && livro != null) {
+            if (!usuario.get_LivrosEmprestados().contains(livro)) {
+                System.out.println("Usuário não possui este livro emprestado.");
+                return;
+            }
+            if (LocalDate.now().isAfter(usuario.getDataEmprestimo(livro).plusDays(7))) {
+                System.out.println("Devolução atrasada. Usuário deve pagar multa.");
+                long daysBorrowed = ChronoUnit.DAYS.between(usuario.getDataEmprestimo(livro), LocalDate.now());
+                System.out.println("O livro foi emprestado por " + daysBorrowed + " dias.");
+                multa = daysBorrowed * 0.5;
+                System.out.println("Multa a ser paga: R$" + multa);
+            }
             usuario.removerLivroEmprestado(livro);
         }
     }
