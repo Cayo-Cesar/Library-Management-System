@@ -59,63 +59,80 @@ public class testeGerenciador {
 
          // Teste de empréstimo e devolução de livros
 
-         gerenciadorUsuarios gerenciadorUsuarios = new gerenciadorUsuarios();
+        //  gerenciadorUsuarios gerenciadorUsuarios = new gerenciadorUsuarios();
 
-         gerenciadorLivros gerenciadorLivros = new gerenciadorLivros();
+        //  gerenciadorLivros gerenciadorLivros = new gerenciadorLivros();
  
-         usuario usuario = new usuario();
-         usuario.set_nome("João");
-         usuario.set_idade(20);
-         usuario.set_endereco("Rua A, 123");
-         usuario.set_telefone("1234-5678");
+        //  usuario usuario = new usuario();
+        //  usuario.set_nome("João");
+        //  usuario.set_idade(20);
+        //  usuario.set_endereco("Rua A, 123");
+        //  usuario.set_telefone("1234-5678");
  
-         livro livro = new livro();
-         livro.set_titulo("O Senhor dos Anéis");
-         livro.set_autor("J.R.R. Tolkien");
-         livro.set_ano(1954);
-         livro.set_genero("Fantasia");
+        //  livro livro = new livro();
+        //  livro.set_titulo("O Senhor dos Anéis");
+        //  livro.set_autor("J.R.R. Tolkien");
+        //  livro.set_ano(1954);
+        //  livro.set_genero("Fantasia");
 
-         livro livro2 = new livro();
-         livro2.set_titulo("O Hobbit");
-            livro2.set_autor("J.R.R. Tolkien");
-            livro2.set_ano(1937);
-            livro2.set_genero("Fantasia");
+        //  livro livro2 = new livro();
+        //  livro2.set_titulo("O Hobbit");
+        //     livro2.set_autor("J.R.R. Tolkien");
+        //     livro2.set_ano(1937);
+        //     livro2.set_genero("Fantasia");
 
-            livro livro3 = new livro();
-            livro3.set_titulo("A Sociedade do Anel");
-            livro3.set_autor("J.R.R. Tolkien");
-            livro3.set_ano(1954);
-            livro3.set_genero("Fantasia");
+        //     livro livro3 = new livro();
+        //     livro3.set_titulo("A Sociedade do Anel");
+        //     livro3.set_autor("J.R.R. Tolkien");
+        //     livro3.set_ano(1954);
+        //     livro3.set_genero("Fantasia");
 
-            livro livro4 = new livro();
-            livro4.set_titulo("As Duas Torres");
-            livro4.set_autor("J.R.R. Tolkien");
-            livro4.set_ano(1954);
-            livro4.set_genero("Fantasia");
+        //     livro livro4 = new livro();
+        //     livro4.set_titulo("As Duas Torres");
+        //     livro4.set_autor("J.R.R. Tolkien");
+        //     livro4.set_ano(1954);
+        //     livro4.set_genero("Fantasia");
  
-         gerenciadorUsuarios.adicionarUsuario(usuario);
-         gerenciadorLivros.adicionarLivro(livro);
-            gerenciadorLivros.adicionarLivro(livro2);
-            gerenciadorLivros.adicionarLivro(livro3);
-            gerenciadorLivros.adicionarLivro(livro4);
+        //  gerenciadorUsuarios.adicionarUsuario(usuario);
+        //  gerenciadorLivros.adicionarLivro(livro);
+        //     gerenciadorLivros.adicionarLivro(livro2);
+        //     gerenciadorLivros.adicionarLivro(livro3);
+        //     gerenciadorLivros.adicionarLivro(livro4);
  
-         System.out.println("Antes do empréstimo:");
-         gerenciadorUsuarios.listarUsuarios();
-         gerenciadorLivros.listarLivros();
+        //  System.out.println("Antes do empréstimo:");
+        //  gerenciadorUsuarios.listarUsuarios();
+        //  gerenciadorLivros.listarLivros();
  
-         gerenciadorUsuarios.emprestarLivro(usuario, livro);
-            gerenciadorUsuarios.emprestarLivro(usuario, livro2);
-            gerenciadorUsuarios.emprestarLivro(usuario, livro3);
-            gerenciadorUsuarios.emprestarLivro(usuario, livro4);
+        //  gerenciadorUsuarios.emprestarLivro(usuario, livro);
+        //     gerenciadorUsuarios.emprestarLivro(usuario, livro2);
+        //     gerenciadorUsuarios.emprestarLivro(usuario, livro3);
+        //     gerenciadorUsuarios.emprestarLivro(usuario, livro4);
  
-         System.out.println("\nDepois do empréstimo:");
-         gerenciadorUsuarios.listarUsuarios();
-         gerenciadorLivros.listarLivros();
+        //  System.out.println("\nDepois do empréstimo:");
+        //  gerenciadorUsuarios.listarUsuarios();
+        //  gerenciadorLivros.listarLivros();
  
-         gerenciadorUsuarios.devolverLivro(usuario, livro);
+        //  gerenciadorUsuarios.devolverLivro(usuario, livro);
 
-         System.out.println("\nDepois da devolução:");
-         gerenciadorUsuarios.listarUsuarios();
-         gerenciadorLivros.listarLivros();
+        //  System.out.println("\nDepois da devolução:");
+        //  gerenciadorUsuarios.listarUsuarios();
+        //  gerenciadorLivros.listarLivros();
+
+
+         // Cria um novo usuário
+    usuario usuario = new usuario();
+    usuario.set_id_usuario(1);
+    usuario.set_nome("Teste");
+
+    // Cria um novo livro
+    livro livro = new livro();
+    livro.set_id_livro(1);
+    livro.set_titulo("Livro de Teste");
+
+    // Empresta o livro ao usuário
+    usuario.adicionarLivroEmprestado(livro);
+
+    // Imprime a data de empréstimo
+    System.out.println("Data de empréstimo: " + usuario.getDataEmprestimo(livro));
     }
 }

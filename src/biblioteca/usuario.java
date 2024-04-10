@@ -2,8 +2,11 @@
 // No changes needed, remove the import statement for java.lang.String
 package biblioteca;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
 
 public class usuario {
 
@@ -13,9 +16,11 @@ public class usuario {
     private String endereco;
     private String telefone;
     private List<livro> livrosEmprestados;
+    private Map<livro, LocalDate> dataEmprestimos;
 
     public usuario() {
         this.livrosEmprestados = new ArrayList<>();
+        this.dataEmprestimos = new HashMap<>();
     }
 
     public int get_id_usuario() {
@@ -68,9 +73,14 @@ public class usuario {
 
     public void adicionarLivroEmprestado(livro livro) {
         livrosEmprestados.add(livro);
+        dataEmprestimos.put(livro, LocalDate.now());
     }
 
     public void removerLivroEmprestado(livro livro) {
         livrosEmprestados.remove(livro);
+    }
+
+    public LocalDate getDataEmprestimo(livro livro) {
+        return dataEmprestimos.get(livro);
     }
 }
