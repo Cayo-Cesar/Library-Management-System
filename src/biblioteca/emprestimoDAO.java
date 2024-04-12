@@ -58,4 +58,21 @@ public class emprestimoDAO {
 
         }
     }
+
+    public void listarEmprestimosUsuario(int idUsuario) {
+        Connection conn = Conexao.getConexao();
+        try {
+            String sql = "SELECT * FROM emprestimo WHERE id_usuario = ?";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1, idUsuario);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                System.out.println("ID do empréstimo: " + rs.getInt("id_emprestimo"));
+                System.out.println("ID do usuário: " + rs.getInt("id_usuario"));
+                System.out.println("ID do livro: " + rs.getInt("id_livro"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+}
+    }
 }
