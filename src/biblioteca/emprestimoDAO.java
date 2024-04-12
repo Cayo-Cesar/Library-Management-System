@@ -12,8 +12,28 @@ public class emprestimoDAO {
     public void adicionarEmprestimo(emprestimo emprestimo) {
         Connection conn = Conexao.getConexao();
         try {
-            if(emprestimo.get_id_usuario() < 0 || emprestimo.get_id_livro() < 0){
+            
+            if(emprestimo.get_data_emprestimo() == null || emprestimo.get_data_devolucao() == null || emprestimo.get_id_usuario() == 0 || emprestimo.get_id_livro() == 0){
                 System.out.println("Preencha todos os campos.");
+                return;
+            }
+
+            else if(emprestimo.is_devolvido() == true){
+                System.out.println("Livro já devolvido.");
+            }
+
+            else if(emprestimo.get_data_emprestimo().after(emprestimo.get_data_devolucao())){
+                System.out.println("Data de devolução inválida.");
+                return;
+            }
+
+            else if(emprestimo.get_data_emprestimo().before(new Date())){
+                System.out.println("Data de empréstimo inválida.");
+                return;
+            }
+
+            else if(emprestimo.get_id_usuario() < 0 || emprestimo.get_id_livro() < 0){
+                System.out.println("ID do usuário ou ID do livro inválido.");
                 return;
             }
 
@@ -57,6 +77,9 @@ public class emprestimoDAO {
                 System.out.println("ID do empréstimo: " + rs.getInt("id_emprestimo"));
                 System.out.println("ID do usuário: " + rs.getInt("id_usuario"));
                 System.out.println("ID do livro: " + rs.getInt("id_livro"));
+                System.out.println("Data de empréstimo: " + rs.getDate("data_emprestimo"));
+                System.out.println("Data de devolução: " + rs.getDate("data_devolucao"));
+                System.out.println("Devolvido: " + rs.getBoolean("devolvido"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -75,6 +98,9 @@ public class emprestimoDAO {
                 System.out.println("ID do empréstimo: " + rs.getInt("id_emprestimo"));
                 System.out.println("ID do usuário: " + rs.getInt("id_usuario"));
                 System.out.println("ID do livro: " + rs.getInt("id_livro"));
+                System.out.println("Data de empréstimo: " + rs.getDate("data_emprestimo"));
+                System.out.println("Data de devolução: " + rs.getDate("data_devolucao"));
+                System.out.println("Devolvido: " + rs.getBoolean("devolvido"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
