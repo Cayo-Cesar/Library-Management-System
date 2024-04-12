@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
+import java.util.Date;
+import java.sql.Statement;
 
 public class emprestimoDAO {
     
@@ -16,10 +18,13 @@ public class emprestimoDAO {
             }
 
             else {
-            String sql = "INSERT INTO emprestimo (id_usuario, id_livro) VALUES (?, ?)";
+            String sql = "INSERT INTO emprestimo (id_usuario, id_livro, data_emprestimo, data_devolucao, devolvido) VALUES (?, ?)";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setInt(1, emprestimo.get_id_usuario());
             ps.setInt(2, emprestimo.get_id_livro());
+            ps.setDate(3, (java.sql.Date) emprestimo.get_data_emprestimo());
+            ps.setDate(4, (java.sql.Date) emprestimo.get_data_devolucao());
+            ps.setBoolean(5, emprestimo.is_devolvido());
             ps.executeUpdate();
             System.out.println("Empréstimo cadastrado com sucesso.");
             }
