@@ -1,18 +1,27 @@
-## Getting Started
+# Sistema de Gerenciamento de Biblioteca
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Este é um projeto de um sistema de gerenciamento de biblioteca desenvolvido em Java. O sistema permite que os usuários realizem operações como adicionar, remover e listar livros, gerenciar usuários e realizar empréstimos de livros.
 
-## Folder Structure
+## Funcionalidades
 
-The workspace contains two folders by default, where:
+- Adicionar novo livro
+- Remover livro existente
+- Listar todos os livros disponíveis
+- Adicionar novo usuário
+- Remover usuário existente
+- Listar todos os usuários
+- Realizar empréstimo de livro para um usuário
+- Registrar devolução de livro
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Requisitos
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+- JDK (Java Development Kit) instalado
+- IDE (Ambiente Integrado de Desenvolvimento) compatível com Java, como Eclipse ou IntelliJ IDEA
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## Como Executar
 
-## Dependency Management
+1. Clone o repositório para o seu ambiente local:
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+```bash
+git clone https://github.com/seu_usuario/sistema-biblioteca.git
+´´´
