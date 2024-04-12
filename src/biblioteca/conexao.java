@@ -3,12 +3,12 @@ package biblioteca;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class conexao { 
+public class Conexao { 
 	private static Connection[] conexoes = new Connection[10];
 	private static boolean conectou = false;
 	private static int pos = 0;
 
-	private conexao(){
+	private Conexao(){
 	}
 	
 	public static Connection getConexao(){
