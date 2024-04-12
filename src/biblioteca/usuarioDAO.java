@@ -5,10 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class usuarioDAO {
-    
-    gerenciadorLivros gl = new gerenciadorLivros();
-    gerenciadorUsuarios gu = new gerenciadorUsuarios();
-    livro l = new livro();
 
     public void adicionarUsuario(usuario usuario) {
         Connection conn = Conexao.getConexao();
