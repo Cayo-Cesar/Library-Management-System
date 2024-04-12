@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.util.Date;
-import java.sql.Statement;
 
 public class emprestimoDAO {
     
