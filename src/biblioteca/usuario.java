@@ -2,12 +2,6 @@
 // No changes needed, remove the import statement for java.lang.String
 package biblioteca;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
-
 public class usuario {
 
     private int id_usuario;
@@ -15,11 +9,6 @@ public class usuario {
     private int idade;
     private String endereco;
     private String telefone;
-    
-    public usuario() {
-        this.livrosEmprestados = new ArrayList<>();
-        this.dataEmprestimos = new HashMap<>();
-    }
 
     public int get_id_usuario() {
         return id_usuario;
@@ -61,4 +50,4 @@ public class usuario {
         this.telefone = telefone;
     }
   }
-}
+
