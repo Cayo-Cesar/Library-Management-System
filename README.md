@@ -12,11 +12,18 @@ Este é um projeto de um sistema de gerenciamento de biblioteca desenvolvido em 
 - Listar todos os usuários
 - Realizar empréstimo de livro para um usuário
 - Registrar devolução de livro
+- Listar todos os empréstimos
+- Listar todos os empréstimos de um usuário
 
 ## Requisitos
 
 - JDK (Java Development Kit) instalado
 - IDE (Ambiente Integrado de Desenvolvimento) compatível com Java, como Eclipse ou IntelliJ IDEA
+- Git instalado
+- Conhecimento básico de Java
+- Conhecimento básico de Git
+- Conhecimento básico de uso de IDE
+- Conhecimento básico de uso de terminal
 
 ## Como Executar
 
