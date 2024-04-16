@@ -13,5 +13,20 @@ public class testesBiblioteca {
 
         usuarioDAO usuarioDAO = new usuarioDAO();
         usuarioDAO.adicionarUsuario(usuario);
+
+        //cadastrar livro
+        livro livro = new livro();
+        livro.set_titulo("O Senhor dos Anéis");
+        livro.set_autor("J.R.R. Tolkien");
+        livro.set_ano(1954);
+        livro.set_genero("Fantasia");
+        livro.set_disponivel("sim");
+
+        livroDAO livroDAO = new livroDAO();
+        livroDAO.adicionarLivro(livro);
+
+
     }
+
+
 }

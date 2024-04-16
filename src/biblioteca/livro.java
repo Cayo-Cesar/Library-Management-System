@@ -7,7 +7,7 @@ public class livro {
     private String autor;
     private int ano;
     private String genero;
-    private boolean disponivel;
+    private String disponivel;
 
     public int get_id_livro() {
         return id_livro;
@@ -49,11 +49,11 @@ public class livro {
         this.genero = genero;
     }
 
-    public boolean get_disponivel() {
+    public String get_disponivel() {
         return disponivel;
     }
 
-    public void set_disponivel(boolean disponivel) {
+    public void set_disponivel(String disponivel) {
         this.disponivel = disponivel;
     }
 }
