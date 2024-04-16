@@ -39,11 +39,37 @@ public class usuarioDAO {
 
     public void atualizarUsuario(usuario usuario) {
         Connection conn = Conexao.getConexao();
+
+        if (usuario.get_nome().isEmpty() || usuario.get_endereco().isEmpty() || usuario.get_telefone().isEmpty()) {
+            System.out.println("Preencha todos os campos.");
+            return;
+        } else if (usuario.get_idade() < 0) {
+            System.out.println("Idade inválida.");
+            return;
+        } else if (usuario.get_nome().length() > 100) {
+            System.out.println("Nome muito grande.");
+            return;
+        } else if (usuario.get_endereco().length() > 100) {
+            System.out.println("Endereço muito grande.");
+            return;
+        } else if (usuario.get_telefone().length() > 20) {
+            System.out.println("Telefone muito grande.");
+            return;
+        } else if (usuario.get_id_usuario() < 0) {
+            System.out.println("ID de usuário inválido.");
+            return;
+        } else if (usuario.get_idade() < 0) {
+            System.out.println("Idade inválida.");
+            return;
+        } else if (usuario.get_id_usuario() < 0) {
+            System.out.println("ID de usuário inválido.");
+            return;
+        } else if (usuario.get_idade() < 0) {
+            System.out.println("Idade inválida.");
+            return;
+        }
+
         try {
-            if (usuario.get_nome().isEmpty() || usuario.get_idade() == 0 || usuario.get_endereco().isEmpty() || usuario.get_telefone().isEmpty()) {
-                System.out.println("Preencha todos os campos.");
-                return;
-            }
             String sql = "UPDATE usuario SET nome = ?, idade = ?, endereco = ?, telefone = ? WHERE id_usuario = ?";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, usuario.get_nome());
@@ -51,6 +77,7 @@ public class usuarioDAO {
             ps.setString(3, usuario.get_endereco());
             ps.setString(4, usuario.get_telefone());
             ps.setInt(5, usuario.get_id_usuario());
+
             int rows = ps.executeUpdate();
             if (rows == 0) {
                 System.out.println("Usuário não encontrado.");
@@ -62,12 +89,13 @@ public class usuarioDAO {
         }
     }
 
-    public void excluirUsuario(int idUsuario) {
+
+    public void excluirUsuario(usuario idUsuario) {
         Connection conn = Conexao.getConexao();
         try {
             String sql = "DELETE FROM usuario WHERE id_usuario = ?";
             PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setInt(1, idUsuario);
+            ps.setInt(1, idUsuario.get_id_usuario());
             int rows = ps.executeUpdate();
             if (rows == 0) {
                 System.out.println("Usuário não encontrado.");

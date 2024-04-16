@@ -14,6 +14,9 @@ public class testesBiblioteca {
         usuarioDAO usuarioDAO = new usuarioDAO();
         usuarioDAO.adicionarUsuario(usuario);
 
+        //listar usuarios
+        usuarioDAO.listarUsuarios();
+
         //atualizar usuario
         usuario.set_nome("João da Silva");
         usuario.set_idade(21);
@@ -22,19 +25,24 @@ public class testesBiblioteca {
 
         usuarioDAO.atualizarUsuario(usuario);
 
-        //cadastrar livro
-        livro livro = new livro();
-        livro.set_titulo("O Senhor dos Anéis");
-        livro.set_autor("J.R.R. Tolkien");
-        livro.set_ano(1954);
-        livro.set_genero("Fantasia");
-        livro.set_disponivel("sim");
+        //listar usuarios
+        usuarioDAO.listarUsuarios();
 
-        livroDAO livroDAO = new livroDAO();
-        livroDAO.adicionarLivro(livro);
+        //excluir usuario
+//        usuario.set_id_usuario(5);
+//        usuarioDAO.excluirUsuario(usuario);
+
+//        //cadastrar livro
+//        livro livro = new livro();
+//        livro.set_titulo("O Senhor dos Anéis");
+//        livro.set_autor("J.R.R. Tolkien");
+//        livro.set_ano(1954);
+//        livro.set_genero("Fantasia");
+//        livro.set_disponivel("sim");
+//
+//        livroDAO livroDAO = new livroDAO();
+//        livroDAO.adicionarLivro(livro);
 
         //
     }
-
-
 }
