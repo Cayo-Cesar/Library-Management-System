@@ -14,6 +14,14 @@ public class testesBiblioteca {
         usuarioDAO usuarioDAO = new usuarioDAO();
         usuarioDAO.adicionarUsuario(usuario);
 
+        //atualizar usuario
+        usuario.set_nome("João da Silva");
+        usuario.set_idade(21);
+        usuario.set_endereco("Rua 2, 456");
+        usuario.set_telefone("8765-4321");
+
+        usuarioDAO.atualizarUsuario(usuario);
+
         //cadastrar livro
         livro livro = new livro();
         livro.set_titulo("O Senhor dos Anéis");
@@ -25,7 +33,7 @@ public class testesBiblioteca {
         livroDAO livroDAO = new livroDAO();
         livroDAO.adicionarLivro(livro);
 
-
+        //
     }
 
 
