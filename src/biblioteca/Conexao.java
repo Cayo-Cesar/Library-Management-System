@@ -8,8 +8,12 @@ public class Conexao {
 	private static boolean conectou = false;
 	private static int pos = 0;
 
-	private Conexao(){
+	public Conexao(){
 	}
+
+	public static Conexao novaConexao() {
+        return new Conexao();
+    }
 	
 	public static Connection getConexao(){
 		if (pos == 10){
